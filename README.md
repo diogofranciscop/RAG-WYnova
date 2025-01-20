@@ -5,55 +5,63 @@ This is the pratical test for the AI engineer position at WYnova.
 The goal of this project is to demonstrate the ability to build a minimal Retrieval-Augmented Generation (RAG) application in a standardized way. 
 My project uses the European Union's PDF on Fundamental Rights as a knowledge base, which is available on the [European Union website](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A12012P%2FTXT).
 
-## Run and Test Locally
-### Pre-requesites
+# Run and Test Locally
+## Pre-requesites
 Ensure you have the following installed:
 - Python (tested with version 3.12.3, but it may work with others): [Download and Installation Guide](https://www.python.org/downloads/)
 - If using Docker to run locally: [Installation Guide](https://docs.docker.com/engine/install/)
 
 ## Steps
+- Clone the repository:
+```bash
+git clone https://github.com/diogofranciscop/RAG-WYnova
+```
+- Change into the project directory:
+``` bash
+cd your/path/RAG-WYnova
+```
 ### Using CLI
-Start by initializing a virtual environment:
+- Start by initializing a virtual environment:
 ```bash
 python -m venv ven
 ```
-Activate the virtual environment:
+- Activate the virtual environment:
 ```bash
 source venv/bin/activate
 ```
-Install the requirements:
+- Install the requirements:
 ```bash
 pip install -r requirements.txt
 ```
-Run the application locally:
+- Run the application locally:
 ```bash
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
-Test the endpoint:
+- Test the endpoint:
 ```bash
 curl -X POST "http://127.0.0.1:8000/ask" -H "Content-Type: application/json" -d '{"question": "write here your question"}'
 ```
 
 ### Using docker
-Run the application using Docker:
+- Run the application using Docker:
 ```bash
 ./start.sh
 ```
-Ensure you have the necessary permissions. On Linux, you may need:
+- Ensure you have the necessary permissions. On Linux, you may need:
 ```bash
 sudo ./start.sh
 ```
-Test the endpoint:
+- Test the endpoint:
 ```bash
 curl -X POST "http://127.0.0.1:8000/ask" -H "Content-Type: application/json" -d '{"question": "write here your question"}'
 ```
 
 ### Demo of the application
-Example of testing the endpoint:
+- Example of testing the endpoint:
 ```bash
 curl -X POST "http://127.0.0.1:8000/ask" -H "Content-Type: application/json" -d '{"question": "If Im accused of a crime what are my rights?"}'
 ```
-The LLM's response and the relevant snippets used:
+- The LLM's response and the relevant snippets used:
 ```Json
 {"answer":"If you're accused of a crime, your rights under the European Union's Fundamental Rights include:\n\n1. **Presumption of innocence**: You are presumed innocent until proven guilty according to law (Article 48).\n2. **Right to defense**: Your rights of defense are guaranteed, and you have the right to be advised, defended, and represented (Article 48 and Article 47).\n3. **Right to a fair trial**: You are entitled to a fair and public hearing within a reasonable time by an independent and impartial tribunal (Article 47).\n4. **Right to an effective remedy**: You have the right to an effective remedy before a tribunal if your rights and freedoms are violated (Article 47).\n5. **Protection against double jeopardy**: You cannot be tried or punished twice for the same offense (Article 50).\n6. **Access to legal aid**: If you lack sufficient resources, legal aid shall be made available to ensure effective access to justice (Article 47).",
 "relevant_snippets":[
