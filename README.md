@@ -12,6 +12,7 @@ Ensure you have the following installed:
 - If using Docker to run locally: [Installation Guide](https://docs.docker.com/engine/install/)
 
 ## Steps
+### Clone the Repository
 - Clone the repository:
 ```bash
 git clone https://github.com/diogofranciscop/RAG-WYnova
@@ -20,7 +21,14 @@ git clone https://github.com/diogofranciscop/RAG-WYnova
 ``` bash
 cd your/path/RAG-WYnova
 ```
-### Using CLI
+### API Key setup
+- Get your [groq API key](https://console.groq.com/keys)
+- Save the API key in a `.env` file:
+```bash
+GROQ_API_KEY=your_api_key
+```
+- **Important**: Ensure that the .env file is listed in the .gitignore file to prevent accidental exposure of the API.
+#### Using CLI
 - Start by initializing a virtual environment:
 ```bash
 python -m venv ven
@@ -42,7 +50,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 curl -X POST "http://127.0.0.1:8000/ask" -H "Content-Type: application/json" -d '{"question": "write here your question"}'
 ```
 
-### Using docker
+#### Using docker
 - Run the application using Docker:
 ```bash
 ./start.sh
