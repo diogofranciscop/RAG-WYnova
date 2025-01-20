@@ -1,5 +1,5 @@
 # RAG-WYnova
-This is the pratical test for the AI engineer position at WYNova.
+This is the pratical test for the AI engineer position at WYnova.
 
 ## Overview
 The goal of this project is to demonstrate the ability to build a minimal Retrieval-Augmented Generation (RAG) application in a standardized way. 
