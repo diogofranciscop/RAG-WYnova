@@ -51,6 +51,10 @@ curl -X POST "http://127.0.0.1:8000/ask" -H "Content-Type: application/json" -d 
 ```
 
 #### Using docker
+- Ensure the `./start.sh` is executable:
+```bash
+chmod +x start.sh
+```
 - Run the application using Docker:
 ```bash
 ./start.sh
